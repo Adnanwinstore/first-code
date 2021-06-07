@@ -11,8 +11,8 @@ function categories_product() {
                     <div className="row">
                         <div className="col-md-2 cat_shadow bg-white border">
                             <Link className="text-dark underline" to="/">
-                            <img src="imgs/321be1f57107ab45fde45168ba113ff2.jpg" className="img-fluid cat_img" alt="" style={{height:"150px", width:"160px"}} />
-                                <h6 className="text-center font-weight-normal">Deep Fryers</h6>
+                                <img src="imgs/69d7a8e6995b467c0ece9c1e48e1d6ca.jpg_400x400q75-product.jpg" className="img-fluid cat_img" alt=""/>
+                                <h6 className="text-center font-weight-normal">Face Wash</h6>
                             </Link>
                         </div>
                         <div className="col-md-2 cat_shadow bg-white border">
@@ -53,8 +53,8 @@ function categories_product() {
                         </div>
                         <div className="col-md-2 cat_shadow bg-white border">
                             <Link className="text-dark underline" to="/">
-                                <img src="imgs/321be1f57107ab45fde45168ba113ff2.jpg" className="img-fluid cat_img" alt="" style={{height:"150px", width:"160px"}} />
-                                <h6 className="text-center font-weight-normal">Deep Fryers</h6>
+                                <img src="imgs/69d7a8e6995b467c0ece9c1e48e1d6ca.jpg_400x400q75-product.jpg" className="img-fluid cat_img" alt=""/>
+                                <h6 className="text-center font-weight-normal">Extra White Face Wash</h6>
                             </Link>
                         </div>
                         <div className="col-md-2 cat_shadow bg-white border">

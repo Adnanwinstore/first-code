@@ -3,7 +3,7 @@ import 'react-slideshow-image/dist/styles.css'
 import { Link } from 'react-router-dom'
 import { Fade } from 'react-slideshow-image'
 import {Col, Row, Container} from 'react-bootstrap'
-import React from 'react'
+import React, { useState } from 'react'
 import SliderMenu from '../components/layouts/slidermenu'
 import FlashProducts from '../pages/flashproducts'
 import CatProducts from '../components/layouts/categories_product'
@@ -11,11 +11,22 @@ import JustForYourProducts from '../components/layouts/foryouproductssection'
 import CollectionProducts from '../components/layouts/collection'
 import PopularBrands from '../components/layouts/popularbrand'
 import products from '../products'
+import Countdown from 'react-countdown';
+import { useLoadMore } from 'react-load-more-hook';
 // import foryouproducts from '../foryouproducts'
 
 
 
-function home(history) { 
+function home({ history }) { 
+
+    // Load more button 2nd try
+    // const [onOfElement, setOfElement] = useState(4);
+    // const loadmore = () => {
+    //     setnoOfElement(noOfElement + noOfElement);
+    // }
+    // const slic = data.carddata.slice(0, noOfElement);
+   
+
 
     // SlideShow images and indicators...
     const fadeImages = [
@@ -31,6 +42,22 @@ function home(history) {
         indicators: i => (<div className="indicator"></div>)
     }
 
+    // Load More Poducts Button
+    // const SampleComponent = () => {
+    //     const loadMoreLogic = () => {
+            
+    //     }
+    //     const { ref } = useRef(null)
+    //     const [isLoadingMore, setIsLoadingMore] = useLoadMore(()=>loadMoreLogic() , ref)
+    //     useEffect(() => {
+    //         if (isLoadingMore && loadMoreLogicComplete) {
+    //             setIsLoadingMore(false)
+    //         }
+    //     }, [isLoadingMore])
+
+
+    // CountDown Timmer Completion msg
+    const Completionist = () => <span>Special Sale has been ended!</span>;
 
     return (
         <div className="">
@@ -120,15 +147,18 @@ function home(history) {
                             <h6 className="text-danger font-weight-normal ml-2 mt-3"> On Sale Now </h6>
                         </div>
                         <div className="col-md-4">
-                            <div className="mt-3 ml-2 pb-3 countdown_timer">
-                                <span className="">Ending In: </span>
-                                <span className="px-3 rounded py-2 bg-info">7</span> <span> : </span> 
+                            <div className="mt-3 pt-1 ml-2 pb-3 countdown_timer">
+                                <span className="font-weight-bold h4">Ending in: </span>
+                                <Countdown date={Date.now() + 705000000} className="bg-info px-4 py-2 ml-2 rounded text-white h4 text-center">
+                                    <Completionist className="bg-info px-4 py-2 ml-2 rounded text-white h4 text-center" />
+                                </Countdown>
+                                {/* <span className="px-3 rounded py-2 bg-info">7</span> <span> : </span> 
                                 <span className="px-3 rounded py-2 bg-info">09</span> <span> : </span>  
-                                <span className="px-3 rounded py-2 bg-info">00</span>
+                                <span className="px-3 rounded py-2 bg-info">00</span> */}
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <Link to="/shop"><button className="btn btn-outline-danger rounded-0 mb-2 mt-2 mr-2 ml-2 float-right shop_more-btn">Shop More</button></Link>
+                            <Link to="/shop"><button className="btn btn-outline-danger rounded-0 mb-2 mt-3 mr-2 ml-2 float-right shop_more-btn">Shop More</button></Link>
                         </div>
                     </div>
                     <Row className="bg-white px-2 pb-1 mb-4">
@@ -159,7 +189,7 @@ function home(history) {
                     <Container>
                         <h3 className="ml-2 mb-2">Just For You</h3>
                         <Row className=" px-2 pb-1 mb-4">
-                            {products.slice(4,16).map(product => (
+                            {products.slice(4, 12).map(product => (
                                 <Col key={product._id} sm={12} md={6} lg={4} xl={3} className="my-2">
                                     <JustForYourProducts product={product} />
                                 </Col>

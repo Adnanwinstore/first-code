@@ -6,6 +6,7 @@ import Header from './components/layouts/header'
 import Cart from './components/layouts/cart'
 import Login from './components/layouts/login'
 import Register from './components/layouts/register'
+import VendorReg from './pages/vendorregistration'
 import Home from './screens/home'
 
 
@@ -41,49 +42,52 @@ import Footer from './components/layouts/footer'
 function App() {
   return (
     <div className="App">
-    
-      <Header />
 
-      <Switch>
-        {/* Header Pages Routes */}
-        <Route path="/" exact component={Home} />
-        <Route path="/cart" exact component={Cart} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/register" exact component={Register} />
+      {/* <Router> */}
+        <Header />
+
+        <Switch>
+          {/* Header Pages Routes */}
+          <Route path="/" exact component={Home} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
+          <Route path='/registervender' exact component={VendorReg} />
+          
+
+          <Route path="/shop" exact component={Shop} />
+          <Route path="/productdetails/:id" exact component={ProductDetails} />
 
 
-        <Route path="/shop" exact component={Shop} />
-        <Route path="/productdetails/:id" exact component={ProductDetails} />
+          {/* Categories Section/SliderMenu cateogries pages "'HeaderSliderMenu'" */}
+          <Route path="/grocery" exact component={Grocery} />
+          <Route path="/electronicdevices" exact component={ElectronicDevices} />
+          <Route path="/electronicaccessories" exact component={ElectronicAccessories} />
+          <Route path="/clothingstore" exact component={ClothingStore} />
+          <Route path="/foodrestaurant" exact component={FoodRestaurant} />
+          <Route path="/flashproducts/" component={FlashProducts} />
+          <Route path="/pharmacy" exact component={Pharmacy} />
+          
+          
 
+          {/* Sub-Categories Menu Pages "'HeaderSliderMenu'" */}
 
-        {/* Categories Section/SliderMenu cateogries pages "'HeaderSliderMenu'" */}
-        <Route path="/grocery" exact component={Grocery} />
-        <Route path="/electronicdevices" exact component={ElectronicDevices} />
-        <Route path="/electronicaccessories" exact component={ElectronicAccessories} />
-        <Route path="/clothingstore" exact component={ClothingStore} />
-        <Route path="/foodrestaurant" exact component={FoodRestaurant} />
-        <Route path="/flashproducts/" component={FlashProducts} />
-        <Route path="/pharmacy" exact component={Pharmacy} />
-        
-        
+          {/* Footer Pages */}
+          <Route path="/faq" exact component={Faq} />
+          <Route path="/blog" exact component={Blog} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/Checkout" exact component={Checkout} />
+          <Route path="/privacypolicy" exact component={PrivacyPolicy} />
+          <Route path="/cancellationpolicy" exact component={CancellationPolicy} />
+          <Route path="/shippingpolicy" exaxt component={ShippingPolicy} />
+          <Route path="/termsconditions" exact component={TermsConditions} />
+          
 
-        {/* Sub-Categories Menu Pages "'HeaderSliderMenu'" */}
+        </Switch>
 
-        {/* Footer Pages */}
-        <Route path="/faq" exact component={Faq} />
-        <Route path="/blog" exact component={Blog} />
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} />
-        <Route path="/Checkout" exact component={Checkout} />
-        <Route path="/privacypolicy" exact component={PrivacyPolicy} />
-        <Route path="/cancellationpolicy" exact component={CancellationPolicy} />
-        <Route path="/shippingpolicy" exaxt component={ShippingPolicy} />
-        <Route path="/termsconditions" exact component={TermsConditions} />
-        
-
-      </Switch>
-
-      <Footer />
+        <Footer />
+      {/* </Router> */}
 
     </div>
   );

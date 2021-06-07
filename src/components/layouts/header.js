@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {Navbar, NavDropdown, Nav, Dropdown,DropdownButton, ButtonGroup} from 'react-bootstrap'
 import SearchBox from './SearchBox'
+import offer from './h_f-imgs/special_offer-onmobileapp.png'
+import logo from './h_f-imgs/logo.png'
 
 
 function header() {
@@ -10,7 +12,7 @@ function header() {
 
              <header>
 
-                <div className="top-bar bg-dark w-100">
+                <div className="top-bar bg-dark">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-2 mt-2">
@@ -37,7 +39,7 @@ function header() {
                                             <Link className="nav-link text-white" to="/"> Shop By Brand <span className="ml-1"> | </span> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-white" to="/">Sell On Winstore <span className="ml-1"> | </span></Link>
+                                            <Link className="nav-link text-white" to="/registervender">Sell On Winstore <span className="ml-1"> | </span></Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link className="nav-link text-white" to="/"> Track Your Order <span className="ml-1"> | </span> </Link>
@@ -54,7 +56,7 @@ function header() {
                 </div>
 
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="bg-light text-dark sticky-top">
-                    <Navbar.Brand to="/"><Link to="/" className="text-white mr-5"><img src="imgs/logo.png" className="img-fluid" alth="logo" /></Link></Navbar.Brand>
+                    <Navbar.Brand to="/"><Link to="/" className="text-white mr-5"><img src={logo} className="img-fluid" alth="logo" /></Link></Navbar.Brand>
                 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav bg-light text-white">
@@ -105,7 +107,7 @@ function header() {
                                     <i className="fa fa-heart-o" aria-hidden="true" style={{color:"darkred"}}></i>
                                     <span className="h6 px-1 cart-count rounded-circle text-white bg-success">0</span>
                                 </Link> */}
-                                <a href="https://play.google.com/store/apps/details?id=com.inspireui.winstore.vendor" target="blank"><img src="imgs/special_offer-onmobileapp.png" alt="Special Mobile Offer Winstore.pk" className="img-fluid blinking" style={{height:"50px"}} /></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.inspireui.winstore.vendor" target="blank"><img src={offer} alt="Special Mobile Offer Winstore.pk" className="img-fluid blinking" style={{height:"50px"}} /></a>
                             {/* </Nav.Link> */}
                             <Nav.Link className="nav-item mr-2">
                                 <Link className="nav-link" to="/cart" tabindex="-1" aria-disabled="true">
@@ -114,7 +116,7 @@ function header() {
                                 </Link>
                             </Nav.Link>
                             <Nav.Link to="/login" className="nav-links nav-item mt-2"><Link to="/login" className="text-dark underline">Login</Link></Nav.Link>
-                            <Nav.Link to="/register" className="nav-links nav-item mt-2"><Link to="/register" className="text-secondary underline">Register</Link></Nav.Link>
+                            <Nav.Link to="/register" className="nav-links nav-item mt-2"><Link to="/register" className="text-secondary underline">Signup</Link></Nav.Link>
                         </Nav>
 
                     </Navbar.Collapse>

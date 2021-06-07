@@ -4,10 +4,10 @@ body{
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
+
 }
 
  /* z-indexing Navbar for Slider dropdown menus */
- 
 
 .fa-shopping-cart{
     position: relative;   
@@ -58,6 +58,7 @@ body{
         opacity: 0;
     }
 }
+
 
   /* Slider area css */
   .each-fade {
@@ -218,6 +219,14 @@ input[type="number"] {
 .rating span{
   margin: 0.1rem;
 }
+/* Product Details  Gallery 3 Images in a row sizing */
+.glry_img{
+  height: 96px;
+  width: 95px;
+  margin-left: 6px;
+}
+
+
 
 
 /* Footer Section Css */
@@ -226,6 +235,7 @@ footer{
     bottom: 100;
     width: 100%;
 }
+
 
 
 .floating {
@@ -270,10 +280,16 @@ footer{
       margin-top: 6px;
     }
     .countdown_timer{
-      background-color:brown;
+      /* background-color:brown; */
+      background-size: cover;
+      background-position: center;
       border-radius: 2px;
-      padding: 13px;
-      color: #fff;
+      /* color: #fff; */
+    }
+
+    .glry_img{
+      height: 66px;
+      width: 65px;
     }
 
   }

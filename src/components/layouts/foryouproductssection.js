@@ -5,6 +5,7 @@ import Rating from './rating'
 
 
 function foryouproductssection({ product }) {
+
     return (
         <div className=" p_shadow rounded border-0" style={{border:"none"}}>
             <Card classname="my-2 py-3 bg-white border-0">

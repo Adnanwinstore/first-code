@@ -38,8 +38,8 @@ function login() {
                                         <div class="form-group mt-3">
                                             <Link to="#" className="underline"><button className="btn btn-outline-danger btn-block"><i className="fa fa-google-plus mr-2"></i>Login with Google</button></Link>
                                         </div>
-                                        <div class="form-group mt-4">
-
+                                        <div class="form-group mt-4 pt-1">
+                                            <Link to="/registervender" className="underline"><button className="btn btn-outline-info btn-block"><i class="fa fa-money mr-2" aria-hidden="true"></i>Register as Vendor</button></Link>
                                         </div>
                                     </form>
                                 </div>

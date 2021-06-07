@@ -1,5 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Visa from './h_f-imgs/Visa.png'
+import MasterCard from './h_f-imgs/MasterCard.png'
+import EasyPaisa from './h_f-imgs/easypaisa.jpg'
+import GooglePlay from './h_f-imgs/play_grey_2.jpg'
+import AppleStore from './h_f-imgs/apple_grey_2.jpg'
 
 
 function footer() {
@@ -13,8 +18,8 @@ function footer() {
                             <div className="row">
                                 <div className="col-md-3">
                                     <h6 className="font-weight-bold mb-3">Download App</h6>
-                                    <a href=""><img src="imgs/apple_grey_2.jpg" alt="apple_grey" className="img-fluid" /></a>
-                                    <img src="imgs/play_grey_2.jpg" alt="play_grey_2" className="img-fluid" />
+                                    <a href=""><img src={AppleStore} alt="apple_grey" className="img-fluid" /></a>
+                                    <img src={GooglePlay} alt="play_grey_2" className="img-fluid" />
 
                                     <h4>Follow us</h4>
                                     <div className="row mb-2">
@@ -66,9 +71,9 @@ function footer() {
                                 </div>
 
                                 <div className="payment-method-footer-imgs m-auto pb-5 pt-5">
-                                    <img src="imgs/MasterCard.png" alt="MasterCard.png" className="img-fluid" style={{height: "60px", width: "100px"}} />
-                                    <img src="imgs/Visa.png" alt="Visa.png" className="img-fluid ml-3" style={{height: "60px", width: "100px"}} />
-                                    <img src="imgs/easypaisa.png" alt="easypaisa.ong" className="img-fluid ml-3" style={{height: "60px", width: "100px"}} />
+                                    <img src={MasterCard} alt="MasterCard.png" className="img-fluid" style={{height: "60px", width: "100px"}} />
+                                    <img src={Visa} alt="Visa.png" className="img-fluid ml-3" style={{height: "60px", width: "100px"}} />
+                                    <img src={EasyPaisa} alt="easypaisa.ong" className="img-fluid ml-3" style={{height: "60px", width: "100px"}} />
                                 </div>
                                 <br />
                             </div>
