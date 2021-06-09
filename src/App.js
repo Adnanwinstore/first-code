@@ -7,7 +7,7 @@ import Cart from './components/layouts/cart'
 import Login from './components/layouts/login'
 import Register from './components/layouts/register'
 import VendorReg from './pages/vendorregistration'
-import Home from './screens/home'
+import Home from './screens/Home'
 
 
 // Main Product Pages like Details/Cart/Checkout etc...

@@ -23,37 +23,37 @@ function product_details({ match }) {
                     </nav> */}
                     <div className="row bg-white my-5">
                         <div className="col-md-4 pb-2">
-                            <Magnifier src={product.image} alt={product.name} className="img-fluid mt-3 border" width={500} mgWidth={200} mgHeight={200} zoomFactor={1.6} />
+                            <Magnifier src={products.images} alt={products.name} className="img-fluid mt-3 border" width={500} mgWidth={200} mgHeight={200} zoomFactor={1.6} />
                             {/* <img src={product.image} alt={product.name} className="img-fluid mt-3" /> */}
                             <div className="row m-auto">
                                 <div className="m-auto">
                                 {/* Main Big Product Image */}
-                                    <img src={product.image} alt={product.name} className="img-fluid border border glry_img p-2 mt-3 mr-1" />
+                                    <img src={products.images} alt={products.name} className="img-fluid border border glry_img p-2 mt-3 mr-1" />
 
                                     {/* <div className="col-md-4"> */}
-                                    <img src={product.image} alt={product.name} className="img-fluid border border glry_img p-2 mt-3 mr-1" />
+                                    <img src={products.images} alt={products.name} className="img-fluid border border glry_img p-2 mt-3 mr-1" />
                                     {/* </div> */}
                                     {/* <div className="col-md-4"> */}
-                                    <img src={product.image} alt={product.name} className="img-fluid border border glry_img p-2 mt-3"  />
+                                    <img src={products.images} alt={products.name} className="img-fluid border border glry_img p-2 mt-3"  />
                                     {/* </div> */}
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-5">
-                            <h4 className="font-weight-normal mt-4">{product.name}</h4>
+                            <h4 className="font-weight-normal mt-4">{products.name}</h4>
                             <div>
-                                <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#ffde00'} />
+                                {/* <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#ffde00'} /> */}
                                 {/* <i className="fa fa-star text-warning"></i>
                                 <i className="fa fa-star text-warning"></i>
                                 <i className="fa fa-star text-warning"></i>
                                 <i className="fa fa-star text-warning"></i>
                                 <i className="fa fa-star-half-o text-warning"></i> */}
-                                <span className="text-muted font-weight-light"> ({product.numReviews})</span>
+                                {/* <span className="text-muted font-weight-light"> ({product.numReviews})</span> */}
                                 <a href="#"><span className="float-right mr-1" style={{fontSize:"20px"}}><i className="fa fa-share-alt"></i> </span></a>
                             </div>
-                            <p className="text-muted">Brand: <span className="text-info">{product.brand}</span></p>
+                            <p className="text-muted">Brand: <span className="text-info">{products.brand}</span></p>
                             <hr />
-                            <h5 className="" style={{color: "orange"}}>Rs. {product.price}</h5>
+                            <h5 className="" style={{color: "orange"}}>Rs. {products.price}</h5>
                             <p className="text-muted"><strike>Rs. 210</strike> -10%</p>
                             <div className="row">
                                 <h5 className="mr-4 font-weight-light text-muted mt-5 pt-1 ml-3">Quantity: </h5>
@@ -72,7 +72,7 @@ function product_details({ match }) {
                                 <div className="col-md-6">
                                 <Link to="/" className="underline"><button className="btn btn-info btn-block mb-1">Buy now</button></Link>
                                 </div>
-                                <div className="col-md-10 m-auto">
+                                <div className="col-md-10 m-auto pb-2">
                                 <Link to="/" className="underline"><button className="btn btn-outline-dark btn-block mt-1">Go Back</button></Link>
                                 </div>
                             </div>
@@ -136,15 +136,15 @@ function product_details({ match }) {
                     <div className="row bg-white py-3 border-bottom">
                         <div className="col-md-12">
                             <div className="bg-light">
-                                <h3 style={{background:"#fafafa"}} className="px-4 py-3">Ratings & Reviews of {product.name}</h3>
+                                <h3 style={{background:"#fafafa"}} className="px-4 py-3">Ratings & Reviews of {products.name}</h3>
                             </div>
                         </div>
                         <div className="col-md-2 ml-3">
-                            <h1 style={{fontSize:"60px"}}>{product.rating}<span className="text-muted">/5</span></h1>
+                            <h1 style={{fontSize:"60px"}}>{products.rating}<span className="text-muted">/5</span></h1>
                             <div className="mt-2">
-                                <h3 className="text-warning"><Rating value={product.rating} /></h3>
+                                <h3 className="text-warning"><Rating value={products.rating} /></h3>
                             </div>
-                            <p className="text-muted font-weight-normal">{product.numReviews} Reviews</p>
+                            <p className="text-muted font-weight-normal">{products.numReviews} Reviews</p>
                         </div>
                         <div className="col-md-2">
                             <div className="mt-2">
@@ -206,11 +206,11 @@ function product_details({ match }) {
                     <div className="row bg-white pb-3 mt-4">
                         <div className="col-md-12 border-top">
                             <div className="bg-light">
-                                <h3 style={{background:"#fff"}} className="border-bottom mb-3 pl-4 py-3">Product details of {product.name}</h3>
+                                <h3 style={{background:"#fff"}} className="border-bottom mb-3 pl-4 py-3">Product details of {products.name}</h3>
                             </div>
                         </div>
                         <div className="container ml-4 w-75">
-                            {product.description}
+                            {products.description}
                         </div>
                     </div>
                     

@@ -10,12 +10,12 @@ function foryouproductssection({ product }) {
         <div className=" p_shadow rounded border-0" style={{border:"none"}}>
             <Card classname="my-2 py-3 bg-white border-0">
                 <Link to={`/productdetails/${product._id}`}>
-                    <Card.Img src={product.image} className="border-bottom border-light" />
+                    <Card.Img src={product.images[0].src} className="border-bottom border-light img-fluid" style={{height:"240px"}} />
                 </Link>
                 <Card.Body>
                     <Card.Title as="div">
                         <Link to={`/productdetails/${product._id}`} className="text-dark underline">
-                            <h5>{product.name}</h5>
+                            <h5 max="40">{product.name}</h5>
                         </Link>
                     </Card.Title>
                     <Card.Text as="h6" className="my-2">
@@ -25,7 +25,7 @@ function foryouproductssection({ product }) {
                     </Card.Text>
                     <Card.Text as="div" className="my-2">
                         <div className="my-2">
-                            <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#ffde00'} />
+                            {/* <Rating value={product.average_rating} text={`${product.numReviews} reviews`} color={'#ffde00'} /> */}
                         </div>
                     </Card.Text>
                 </Card.Body>

@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 function checkout() {
     return (
         <div>
-            <section style={{background:"#eff0f5"}}>
+        {/* style={{background:"#eff0f5"}} */}
+            <section>
                 <div className="container py-5">
                 <h2 className="">Billing & Shipping</h2>
                     <div className="row m-auto">

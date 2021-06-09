@@ -1,32 +1,26 @@
 
 import 'react-slideshow-image/dist/styles.css'
 import { Link } from 'react-router-dom'
+import Countdown from 'react-countdown';
 import { Fade } from 'react-slideshow-image'
 import {Col, Row, Container} from 'react-bootstrap'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../actions/productActions'
 import SliderMenu from '../components/layouts/slidermenu'
 import FlashProducts from '../pages/flashproducts'
 import CatProducts from '../components/layouts/categories_product'
 import JustForYourProducts from '../components/layouts/foryouproductssection'
 import CollectionProducts from '../components/layouts/collection'
 import PopularBrands from '../components/layouts/popularbrand'
+import Loader from '../components/layouts/Loader'
 import products from '../products'
-import Countdown from 'react-countdown';
-import { useLoadMore } from 'react-load-more-hook';
+
 // import foryouproducts from '../foryouproducts'
 
 
 
-function home({ history }) { 
-
-    // Load more button 2nd try
-    // const [onOfElement, setOfElement] = useState(4);
-    // const loadmore = () => {
-    //     setnoOfElement(noOfElement + noOfElement);
-    // }
-    // const slic = data.carddata.slice(0, noOfElement);
-   
-
+function Home() { 
 
     // SlideShow images and indicators...
     const fadeImages = [
@@ -42,23 +36,22 @@ function home({ history }) {
         indicators: i => (<div className="indicator"></div>)
     }
 
-    // Load More Poducts Button
-    // const SampleComponent = () => {
-    //     const loadMoreLogic = () => {
-            
-    //     }
-    //     const { ref } = useRef(null)
-    //     const [isLoadingMore, setIsLoadingMore] = useLoadMore(()=>loadMoreLogic() , ref)
-    //     useEffect(() => {
-    //         if (isLoadingMore && loadMoreLogicComplete) {
-    //             setIsLoadingMore(false)
-    //         }
-    //     }, [isLoadingMore])
 
-
-    // CountDown Timmer Completion msg
+    // CountDown Timmer Completion message
     const Completionist = () => <span>Special Sale has been ended!</span>;
 
+
+    // Products 
+    const dispatch = useDispatch()
+    const productList = useSelector(state => state.productList)
+    const { error, loading, products} = productList
+    
+
+    useEffect(() => {
+       dispatch(listProducts())
+    }, [])
+    
+    
     return (
         <div className="">
 
@@ -161,13 +154,18 @@ function home({ history }) {
                             <Link to="/shop"><button className="btn btn-outline-danger rounded-0 mb-2 mt-3 mr-2 ml-2 float-right shop_more-btn">Shop More</button></Link>
                         </div>
                     </div>
-                    <Row className="bg-white px-2 pb-1 mb-4">
-                        {products.slice(0,4).map(product => (
+                    {loading ? <Loader />
+                        : error ? <h4>{error}</h4>
+                        :
+                        <Row className="bg-white px-2 pb-1 mb-4">
+                        {products.slice(0, 4).map(product => (
                             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                                 <FlashProducts product={product} className="" />
                             </Col>
                         ))}
                     </Row>
+                    }
+                    
                 </Container>
             </section>
             {/* Flash Product Section Ends here */}
@@ -188,13 +186,17 @@ function home({ history }) {
                 <div className="container mt-3">
                     <Container>
                         <h3 className="ml-2 mb-2">Just For You</h3>
+                        {loading ? <Loader />
+                        : error ? <h4>{error}</h4>
+                            :
                         <Row className=" px-2 pb-1 mb-4">
-                            {products.slice(4, 12).map(product => (
+                            {products.slice(2, 10).map(product => (
                                 <Col key={product._id} sm={12} md={6} lg={4} xl={3} className="my-2">
                                     <JustForYourProducts product={product} />
                                 </Col>
                             ))}
                         </Row>
+                        }
                         <div className="pt-5">
                             <Link to="/" className="underline"><button className="btn btn-outline-info w-50 btn-block text-center m-auto">Load More</button></Link>
                         </div>
@@ -207,4 +209,4 @@ function home({ history }) {
     )
 }
 
-export default home
+export default Home

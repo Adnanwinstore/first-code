@@ -262,21 +262,26 @@ footer{
 
 
 @media screen and (max-width: 480px) {
+    body{
+      width:100vw;
+    }
     #main-search{
-        width:375px;
+        width:325px;
+        margin: 0 auto;
+        padding-bottom: 10px;
     }
     .header_slider{
-      width: 100vw;
+      width: 100%;
 
     }
     .slider_img{
-      width: 500px;
+      width: 375px;
     }
     .slider_menu{
       display: none;
     }
     .shop_more-btn{
-      float: left !important;; 
+      float: left !important; 
       margin-top: 6px;
     }
     .countdown_timer{
@@ -291,6 +296,10 @@ footer{
       height: 66px;
       width: 65px;
     }
+    .All_cat{
+      display: none;
+    }
+    
 
   }
 

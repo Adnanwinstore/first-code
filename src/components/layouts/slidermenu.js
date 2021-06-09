@@ -8,6 +8,7 @@ function slidermenu() {
         <div>
             <div className="rounded-0 p-1">
                 {['right'].map((direction) => (
+                <a href="/pharmacy" className="underline">
                 <DropdownButton
                     as={ButtonGroup}
                     key={direction}
@@ -134,6 +135,7 @@ function slidermenu() {
                     </div>
                     <Dropdown.Item eventKey="1"><Link to="/" className="text-dark underline">Landline Phones</Link></Dropdown.Item>
                 </DropdownButton>
+                </a>
                 ))}
             </div>
             

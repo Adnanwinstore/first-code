@@ -12,7 +12,7 @@ function header() {
 
              <header>
 
-                <div className="top-bar bg-dark">
+                <div className="top-bar bg-dark w-100">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-2 mt-2">
@@ -96,7 +96,7 @@ function header() {
                                     <input className="form-control me-2 mt-1 border-right-0 rounded-0 main-search-input" type="search" placeholder="Search" aria-label="Search" style={{borderTopRightRadius: "0%", borderBottomRightRadius: "0%", width: "375px"}} />
                                     <button className="btn btn-success border-left-0 mt-1" type="submit" style={{borderTopLeftRadius: "0%", borderBottomLeftRadius: "0%",}}><i className="fa fa-search"></i></button>
                                 </form> */}
-                                <SearchBox />
+                                <SearchBox className="mainsearchbar" />
                                 
                             </div>
                         </Nav>

@@ -8,18 +8,18 @@ function flashproducts({ product }) {
     return (
         <div className="my-5 p_shadow border-0 rounded">
             <Card classname="my-3 bg-white">
-                <Link to={`/productdetails/${product._id}`}>
-                    <Card.Img src={product.image} className="border-bottom border-light" />
+                <Link to={`/productdetails/${product.id}`}>
+                    <Card.Img src={product.images[0].src} className="border-bottom border-light img-fluid" style={{height:"240px"}} />
                 </Link>
                 <Card.Body>
                     <Card.Title as="div">
                         <Link to={`/productdetails/${product._id}`} className="text-dark underline">
-                            <strong>{product.name}</strong>
+                            <strong max="40">{product.name}</strong>
                         </Link>
                     </Card.Title>
                     <Card.Text as="div" className="my-2">
                         <div className="my-2">
-                            <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#ffde00'} />
+                            {/* <Rating value={product.ratings} text={`${product.numReviews} reviews`} color={'#ffde00'} /> */}
                         </div>
                     </Card.Text>
                     <Card.Text as="h6" className="my-2">
